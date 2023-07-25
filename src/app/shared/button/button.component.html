@@ -1,0 +1,6 @@
+<button type="button" class="btn btn-primary" (click)="onButtonClick()">
+  <i *ngIf="isEdit" class="bi bi-pencil"></i>
+  <i *ngIf="isDelete" class="bi bi-trash"></i>
+  <i *ngIf="isSearch" class="bi bi-search"></i>
+  <i *ngIf="!(isEdit || isDelete || isSearch)">{{ buttonText }}</i>
+</button>

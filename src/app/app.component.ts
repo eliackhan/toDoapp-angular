@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoServiceService } from './todo-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'toDoApp';
+  messages: string[] = [];
+
+  constructor(private todoService: TodoServiceService) { }
+
+  ngOnInit(): void {
+    this.getMessages();
+  }
+
+  getMessages(): void {
+    this.messages = this.todoService.getMessages();
+  }
+
+  clearMessages(): void {
+    this.todoService.clearMessages();
+    this.messages = [];
+  }
 }

@@ -1,0 +1,13 @@
+<div id="search-component">
+    <app-input  [placeholder]="'Enter search keyword'" #taskInput [iconClass]="'bi bi-search'"
+        (input)="performSearch(taskInput.getValue()); taskInput.inputField.nativeElement.value=''">
+    </app-input>
+    <ul class="list-group mb-3">
+        <li class="list-group-item" *ngFor="let task of tasks$ | async">
+            <i class="far fa-square done-icon"></i>
+            <i class="far fa-check-square done-icon"></i>
+            <span class="badge">{{task.id}}</span>
+            <span class="todo-text">{{task.title}}</span>
+        </li>
+    </ul>
+</div>

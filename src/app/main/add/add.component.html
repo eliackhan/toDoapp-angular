@@ -1,0 +1,19 @@
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let task of tasks">
+    <span class="badge badge-primary badge-pill mr-2">{{ task.id }}</span>
+    <span class="flex-fill">{{ task.title }}</span>
+    <app-button [buttonText]="'Edit'" [isEdit]="true" (buttonClicked)="editTask(task)"></app-button>
+    <app-button [isEdit]="false" [isDelete]="true" class="m-1 " (buttonClicked)="delete(task)"></app-button>
+  </li>
+</ul>
+
+
+<div style="position: relative;left: 210px; margin:5px 0;">
+  <app-button [buttonText]="'Clear All'" class="btn-danger" (buttonClicked)="clearAllTasks()"></app-button>
+</div>
+
+<div class="card-footer">
+  <app-input placeholder="Add new todo item" #taskInput [iconClass]="'bi bi-plus'"
+    (iconClick)="addTask(taskInput.getValue()); taskInput.inputField.nativeElement.value=''">
+  </app-input>
+</div>

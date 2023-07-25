@@ -1,0 +1,25 @@
+<!-- <input [id]="inputId" class="form-control" [placeholder]="placeholder" /> -->
+
+<!-- For search input -->
+<!-- <input [id]="inputId" class="form-control" [placeholder]="placeholder" *ngIf="isSearchInput" /> -->
+
+<!-- For add task input -->
+<!-- <input [id]="inputId" class="form-control" [placeholder]="placeholder" *ngIf="!isSearchInput" /> -->
+
+
+<!-- <div class="input-group mb-3">
+    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"  [placeholder]="placeholder">
+    <div class="input-group-append" >
+      <span class="input-group-text"><i [ngClass]="[iconClass]" (click)="onClick()"></i></span>
+    </div>
+  </div> -->
+
+  <div class="input-group">
+    <input #inputField type="text" class="form-control" [placeholder]="placeholder">
+    <div class="input-group-append">
+      <span class="input-group-text" (click)="onIconClick()">
+        <i [class]="iconClass"></i>
+      </span>
+    </div>
+  </div>
+  
